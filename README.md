@@ -1,30 +1,30 @@
-# YouTube 数据接口（YouTube API）：视频搜索、视频详情、评论、字幕、频道
+# YouTube API: video search, details, comments, transcripts and channels
 
-**YouTube 数据 API · YouTube 视频搜索 · YouTube 评论采集 · YouTube 字幕 · YouTube 频道视频。**
+**YouTube data API · YouTube video search · YouTube comments · YouTube transcripts with timestamps · YouTube channel videos and posts.**
 
-这个仓库是 [okdata](https://okdata.online/zh/?src=gh-youtube-api) 的YouTube接口示例：10 个接口在线可用，一个 API Key 调用，按次计费（$0.002 起），失败不扣费。不用登录平台账号，不用 Cookie，不开浏览器，所以也不存在账号被风控的问题。
+Examples for the [okdata](https://okdata.online/?src=gh-youtube-api) YouTube API: 10 live endpoints behind one API key, pay per call from $0.002, and a failed call costs nothing. No YouTube login, no cookies and no browser, so there is no account to get blocked.
 
-[免费注册拿 Key（送 $0.1 试用额度）](https://okdata.online/zh/signup/?src=gh-youtube-api) · [全部接口文档](https://okdata.online/zh/apis/?src=gh-youtube-api) · [接入 AI（MCP）](https://okdata.online/zh/mcp/?src=gh-youtube-api)
+[Sign up free ($0.10 of trial credit)](https://okdata.online/signup/?src=gh-youtube-api) · [All YouTube endpoints](https://okdata.online/apis/youtube/?src=gh-youtube-api) · [Use it from Claude, Cursor or any MCP client](https://okdata.online/mcp/?src=gh-youtube-api)
 
-## 接口清单
+## Endpoints
 
-| 接口 | 说明 | 价格 | 路径 |
+| Endpoint | What it returns | Price | Path |
 |---|---|---|---|
-| [YouTube 视频搜索](https://okdata.online/zh/apis/youtube/videos/search/) | 按关键词搜视频，带播放量、时长和频道。 | $0.004 / 次 | `GET /v1/youtube/videos/search` |
-| [YouTube 视频详情](https://okdata.online/zh/apis/youtube/videos/get/) | 按 ID 或链接取一个视频：标题、简介、播放、点赞和频道。 | $0.002 / 次 | `GET /v1/youtube/videos/get` |
-| [YouTube 视频评论](https://okdata.online/zh/apis/youtube/videos/comments/list/) | 视频评论，按热门或最新。 | $0.002 / 次 | `GET /v1/youtube/videos/comments/list` |
-| [YouTube 视频字幕](https://okdata.online/zh/apis/youtube/videos/transcript/get/) | 视频字幕，带时间戳，原语言或指定语言。 | $0.004 / 次 | `GET /v1/youtube/videos/transcript/get` |
-| [YouTube 评论回复](https://okdata.online/zh/apis/youtube/comments/replies/list/) | 用评论的回复标识取这条评论下的回复，每次约 10 条：内容、回复者（用户名、头像、认证）、点赞，以及大约的发布时间（YouTube 只说“6 年前”）。post_id 和 parent_id 从回复标识里读出。 | $0.002 / 次 | `GET /v1/youtube/comments/replies/list` |
-| [YouTube 频道帖子](https://okdata.online/zh/apis/youtube/channels/posts/list/) | 频道“帖子”栏（原“社区”）里的帖子，从新到旧，每页约 10 条，按频道 ID 或用户名取：正文、图片、点赞、帖子分享的视频（ext.video_id，封面在 images 里），以及大约的发布时间（YouTube 只说“4 天前”）。不存在的频道 ID 和没有帖子的频道一样，返回空结果。 | $0.002 / 次 | `GET /v1/youtube/channels/posts/list` |
-| [YouTube 帖子详情](https://okdata.online/zh/apis/youtube/posts/get/) | 按 ID 或链接取一条频道帖子（原“社区”帖）：正文、频道、图片、点赞、帖子分享的视频（ext.video_id，封面在 images 里），以及大约的发布时间。 | $0.002 / 次 | `GET /v1/youtube/posts/get` |
-| [YouTube 频道资料](https://okdata.online/zh/apis/youtube/channels/get/) | 按频道 ID 或用户名取一个频道：名称、简介、头像、认证、订阅数和视频数（按 YouTube 显示的取整），ext 里还有总播放量、注册日期、“关于”里列的链接、国家和横幅图。按用户名查时会带回用户名。 | $0.002 / 次 | `GET /v1/youtube/channels/get` |
-| [YouTube 频道搜索](https://okdata.online/zh/apis/youtube/channels/search/) | 按关键词找频道，每页 20 个，按 YouTube 的顺序：频道 ID、名称、简介开头、头像和订阅数（按 YouTube 显示的取整）。这里没有用户名和认证标识，认证标识可用 youtube.channels.get 查。 | $0.004 / 次 | `GET /v1/youtube/channels/search` |
-| [YouTube 频道视频](https://okdata.online/zh/apis/youtube/channels/videos/list/) | 按频道 ID 或用户名取频道的视频或 Shorts，从新到旧，每页约 30 条：标题、播放数、封面，普通视频还有时长和大约的发布时间（YouTube 只说“3 周前”）。不存在的频道 ID 和没有这类视频的频道一样，返回空结果。 | $0.002 / 次 | `GET /v1/youtube/channels/videos/list` |
+| [YouTube video search](https://okdata.online/apis/youtube/videos/search/) | Videos matching keywords with views, length and channel. | $0.004 a call | `GET /v1/youtube/videos/search` |
+| [YouTube video detail](https://okdata.online/apis/youtube/videos/get/) | One video by ID or link: title, description, views, likes and channel. | $0.002 a call | `GET /v1/youtube/videos/get` |
+| [YouTube video comments](https://okdata.online/apis/youtube/videos/comments/list/) | Comments on a video, top or newest first. | $0.002 a call | `GET /v1/youtube/videos/comments/list` |
+| [YouTube video transcript](https://okdata.online/apis/youtube/videos/transcript/get/) | The transcript of a video with timestamps, in the original or a chosen language. | $0.004 a call | `GET /v1/youtube/videos/transcript/get` |
+| [YouTube comment replies](https://okdata.online/apis/youtube/comments/replies/list/) | The replies under a comment, by the comment's replies token, about 10 at a time: text, replier (handle, avatar, verification), likes, and roughly when it was posted (YouTube says "6 years ago"). post_id and parent_id are read from the token. | $0.002 a call | `GET /v1/youtube/comments/replies/list` |
+| [YouTube channel posts](https://okdata.online/apis/youtube/channels/posts/list/) | The posts on a channel's Posts tab (once Community), newest first, about 10 a page, by channel ID or handle: text, pictures, likes, the video a post shares (ext.video_id, its cover in images), and roughly when it was posted (YouTube says "4 days ago"). A channel ID nobody has reads like a channel without posts: an empty page. | $0.002 a call | `GET /v1/youtube/channels/posts/list` |
+| [YouTube post detail](https://okdata.online/apis/youtube/posts/get/) | One channel post (once a Community post) by ID or link: text, channel, pictures, likes, the video it shares (ext.video_id, its cover in images), and roughly when it was posted. | $0.002 a call | `GET /v1/youtube/posts/get` |
+| [YouTube channel profile](https://okdata.online/apis/youtube/channels/get/) | A channel by ID or handle: name, description, avatar, verification, subscribers and video count (rounded as YouTube shows them), and under ext its total views, the day it joined, the links in its About section, country and banner. The handle comes back when you ask by handle. | $0.002 a call | `GET /v1/youtube/channels/get` |
+| [YouTube channel search](https://okdata.online/apis/youtube/channels/search/) | Find channels by keywords, 20 a page in YouTube's order: channel ID, name, the start of the description, avatar and subscribers (rounded as YouTube shows them). No handle or badge here; youtube.channels.get gives the badge. | $0.004 a call | `GET /v1/youtube/channels/search` |
+| [YouTube channel videos](https://okdata.online/apis/youtube/channels/videos/list/) | A channel's videos or its Shorts, newest first, about 30 a page, by channel ID or handle: title, views, cover and, for videos, length and roughly when it was published (YouTube says "3 weeks ago"). A channel ID nobody has reads like a channel without such videos: an empty page. | $0.002 a call | `GET /v1/youtube/channels/videos/list` |
 
-## 快速开始
+## Quick start
 
-1. 在 [okdata 控制台](https://okdata.online/zh/signup/?src=gh-youtube-api) 用邮箱注册，拿到 `okd_` 开头的 Key。
-2. 调一次接口：
+1. Sign up at the [okdata console](https://okdata.online/signup/?src=gh-youtube-api) with your email and copy the key that starts with `okd_`.
+2. Make a call:
 
 ```bash
 export OKDATA_API_KEY=okd_...
@@ -33,19 +33,19 @@ curl -G "https://api.okdata.online/v1/youtube/videos/search" \
   --data-urlencode 'query=claude code tutorial'
 ```
 
-Python 版在 [examples/quickstart.py](examples/quickstart.py)（只用标准库，会顺带演示翻页）：`python3 examples/quickstart.py`。
+The Python version is [examples/quickstart.py](examples/quickstart.py) (standard library only, and it fetches a second page too): `python3 examples/quickstart.py`.
 
-返回统一的结构：列表在 `data.items`，下一页用 `page.next_cursor` 传回 `cursor`，这次扣了多少钱在 `meta.billing.amount`，平台不提供的字段为 null 并在 `meta.unavailable` 里写明原因。
+Every endpoint answers in the same shape: the list is in `data.items`, `page.next_cursor` goes back as `cursor` for the next page, what the call cost is in `meta.billing.amount`, and a field the platform does not provide is null with the reason in `meta.unavailable`.
 
-## 让 AI 直接用（MCP）
+## Use it from AI (MCP)
 
-Claude Code：
+Claude Code:
 
 ```bash
 claude mcp add --transport http --scope user okdata https://api.okdata.online/mcp --header "Authorization: Bearer $OKDATA_API_KEY"
 ```
 
-Cursor、Cherry Studio、WorkBuddy 等支持远程 MCP 的客户端：
+Cursor, Windsurf, VS Code and other clients with remote MCP:
 
 ```json
 {
@@ -60,23 +60,25 @@ Cursor、Cherry Studio、WorkBuddy 等支持远程 MCP 的客户端：
 }
 ```
 
-接好以后直接用中文说需求，比如「YouTube 视频搜索：claude code tutorial」。AI 会先用免费的 `find`、`describe` 找接口和看价格，再用 `call` 取数据。
+Then ask in plain words, for example "YouTube video search: claude code tutorial". The agent uses the free `find` and `describe` tools to pick the endpoint and see its price, then `call` to fetch the data.
 
-## 常见问题
+## FAQ
 
-**要登录平台账号吗？** 不用。数据是公开内容，okdata 在服务端获取，你的账号完全不参与。
+**Do I need a YouTube account?** No. The data is public content, fetched on the server; your own account is never involved.
 
-**怎么收费？** 每个接口单独定价，表里写的就是一次调用的价格；按条计费的接口按实际返回条数算。调用失败（包括超时）不扣费。新账号送 $0.1 试用额度，之后按需充值，没有订阅。价格页：https://okdata.online/zh/pricing/
+**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. Failed calls, timeouts included, are free. New accounts get $0.10 to try; after that you top up as you go, with no subscription. Pricing: https://okdata.online/pricing/
 
-**和官方开放平台有什么区别？** 官方开放平台只能读授权给你的账号自己的数据，而且要企业资质和审核；这里是平台上任何人都能看到的公开数据，比如搜索结果、别人的笔记或视频、评论、热榜。
+**Why not the YouTube Data API?** It runs on a daily quota (a search uses 100 of the default 10,000 units) and does not return captions for videos you do not own. Here a search is one call at a fixed price, and transcripts work for any public video that has captions.
 
-**能翻页吗？** 列表接口每页一次调用，把 `page.next_cursor` 原样传回 `cursor` 就是下一页，24 小时内有效。
+**Can I page through results?** Each page of a list is one call: pass `page.next_cursor` back as `cursor` for the next one. A cursor stays valid for 24 hours.
 
-**出错了怎么办？** 每个错误都有固定的 `code`、中文说明 `message_zh`，以及会不会扣费（`charged`）和要不要重试（`retry`）。全部错误码：https://okdata.online/zh/docs/errors/
+**What happens when a call fails?** Every error has a fixed `code`, a `message`, and says whether you were charged (`charged`) and whether to retry (`retry`). All error codes: https://okdata.online/docs/errors/
 
-## English
+## 中文说明
 
-Examples for the okdata YouTube API: 10 live endpoints behind one API key, pay per call from $0.002, failed calls free, no platform login or cookies. Sign up at https://okdata.online/signup/?src=gh-youtube-api, docs at https://okdata.online/apis/, MCP at https://okdata.online/mcp/.
+**YouTube 数据 API · YouTube 视频搜索 · YouTube 评论采集 · YouTube 字幕 · YouTube 频道视频。**
+
+okdata 的YouTube接口示例：10 个接口在线可用，一个 API Key 调用，按次计费（$0.002 起），失败不扣费，不用登录平台账号、不用 Cookie。中文文档：https://okdata.online/zh/apis/youtube/?src=gh-youtube-api · 注册：https://okdata.online/zh/signup/?src=gh-youtube-api · 接入 AI（MCP）：https://okdata.online/zh/mcp/?src=gh-youtube-api
 
 ## License
 
