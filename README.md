@@ -2,7 +2,7 @@
 
 **YouTube data API · YouTube video search · YouTube comments · YouTube transcripts with timestamps · YouTube channel videos and posts.**
 
-Examples for the [okdata](https://okdata.online/?src=gh-youtube-api) YouTube API: 10 live endpoints behind one API key, pay per call from $0.002, and a failed call costs nothing. No YouTube login, no cookies and no browser, so there is no account to get blocked.
+Examples for the [okdata](https://okdata.online/?src=gh-youtube-api) YouTube API: 10 live endpoints behind one API key, pay per call from $0.002. No YouTube login, no cookies and no browser, so there is no account to get blocked.
 
 [Sign up free ($0.10 of trial credit)](https://okdata.online/signup/?src=gh-youtube-api) · [All YouTube endpoints](https://okdata.online/apis/youtube/?src=gh-youtube-api) · [Use it from Claude, Cursor or any MCP client](https://okdata.online/mcp/?src=gh-youtube-api)
 
@@ -66,7 +66,7 @@ Then ask in plain words, for example "YouTube video search: claude code tutorial
 
 **Do I need a YouTube account?** No. The data is public content, fetched on the server; your own account is never involved.
 
-**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. Failed calls, timeouts included, are free. New accounts get $0.10 to try; after that you top up as you go, with no subscription. Pricing: https://okdata.online/pricing/
+**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. A call that reached the data source is charged even when it comes back empty, not found or failed (one item for per-item endpoints); calls stopped before reaching a source (bad parameters, balance) are free. New accounts get $0.10 to try; after that you top up as you go, with no subscription. Pricing: https://okdata.online/pricing/
 
 **Why not the YouTube Data API?** It runs on a daily quota (a search uses 100 of the default 10,000 units) and does not return captions for videos you do not own. Here a search is one call at a fixed price, and transcripts work for any public video that has captions.
 
@@ -78,7 +78,7 @@ Then ask in plain words, for example "YouTube video search: claude code tutorial
 
 **YouTube 数据 API · YouTube 视频搜索 · YouTube 评论采集 · YouTube 字幕 · YouTube 频道视频。**
 
-okdata 的YouTube接口示例：10 个接口在线可用，一个 API Key 调用，按次计费（$0.002 起），失败不扣费，不用登录平台账号、不用 Cookie。中文文档：https://okdata.online/zh/apis/youtube/?src=gh-youtube-api · 注册：https://okdata.online/zh/signup/?src=gh-youtube-api · 接入 AI（MCP）：https://okdata.online/zh/mcp/?src=gh-youtube-api
+okdata 的YouTube接口示例：10 个接口在线可用，一个 API Key 调用，按次计费（$0.002 起），不用登录平台账号、不用 Cookie。中文文档：https://okdata.online/zh/apis/youtube/?src=gh-youtube-api · 注册：https://okdata.online/zh/signup/?src=gh-youtube-api · 接入 AI（MCP）：https://okdata.online/zh/mcp/?src=gh-youtube-api
 
 ## License
 
