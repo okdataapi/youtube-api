@@ -66,7 +66,7 @@ Then ask in plain words, for example "YouTube video search: claude code tutorial
 
 **Do I need a YouTube account?** No. The data is public content, fetched on the server; your own account is never involved.
 
-**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. A call that reached the data source is charged even when it comes back empty, not found or failed (one item for per-item endpoints); calls stopped before reaching a source (bad parameters, balance) are free. New accounts get $0.10 to try; after that you top up as you go, with no subscription. Pricing: https://okdata.online/pricing/
+**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. New accounts get $0.10 to try; after that, top-ups start at $10 and never expire, with no subscription. Pricing: https://okdata.online/pricing/ · Billing details: https://okdata.online/docs/billing/
 
 **Why not the YouTube Data API?** It runs on a daily quota (a search uses 100 of the default 10,000 units) and does not return captions for videos you do not own. Here a search is one call at a fixed price, and transcripts work for any public video that has captions.
 
