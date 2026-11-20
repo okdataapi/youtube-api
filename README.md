@@ -10,16 +10,16 @@ Examples for the [okdata](https://okdata.online/?src=gh-youtube-api) YouTube API
 
 | Endpoint | What it returns | Price | Path |
 |---|---|---|---|
-| [YouTube video search](https://okdata.online/apis/youtube/videos/search/) | Videos matching keywords with views, length and channel. | $0.004 a call | `GET /v1/youtube/videos/search` |
-| [YouTube video detail](https://okdata.online/apis/youtube/videos/get/) | One video by ID or link: title, description, views, likes and channel. | $0.002 a call | `GET /v1/youtube/videos/get` |
-| [YouTube video comments](https://okdata.online/apis/youtube/videos/comments/list/) | Comments on a video, top or newest first. | $0.002 a call | `GET /v1/youtube/videos/comments/list` |
-| [YouTube video transcript](https://okdata.online/apis/youtube/videos/transcript/get/) | The transcript of a video with timestamps, in the original or a chosen language. | $0.004 a call | `GET /v1/youtube/videos/transcript/get` |
-| [YouTube comment replies](https://okdata.online/apis/youtube/comments/replies/list/) | The replies under a comment, by the comment's replies token, about 10 at a time: text, replier (handle, avatar, verification), likes, and roughly when it was posted (YouTube says "6 years ago"). post_id and parent_id are read from the token. | $0.002 a call | `GET /v1/youtube/comments/replies/list` |
-| [YouTube channel posts](https://okdata.online/apis/youtube/channels/posts/list/) | The posts on a channel's Posts tab (once Community), newest first, about 10 a page, by channel ID or handle: text, pictures, likes, the video a post shares (ext.video_id, its cover in images), and roughly when it was posted (YouTube says "4 days ago"). A channel ID nobody has reads like a channel without posts: an empty page. | $0.002 a call | `GET /v1/youtube/channels/posts/list` |
-| [YouTube post detail](https://okdata.online/apis/youtube/posts/get/) | One channel post (once a Community post) by ID or link: text, channel, pictures, likes, the video it shares (ext.video_id, its cover in images), and roughly when it was posted. | $0.002 a call | `GET /v1/youtube/posts/get` |
-| [YouTube channel profile](https://okdata.online/apis/youtube/channels/get/) | A channel by ID or handle: name, description, avatar, verification, subscribers and video count (rounded as YouTube shows them), and under ext its total views, the day it joined, the links in its About section, country and banner. The handle comes back when you ask by handle. | $0.002 a call | `GET /v1/youtube/channels/get` |
-| [YouTube channel search](https://okdata.online/apis/youtube/channels/search/) | Find channels by keywords, 20 a page in YouTube's order: channel ID, name, the start of the description, avatar and subscribers (rounded as YouTube shows them). No handle or badge here; youtube.channels.get gives the badge. | $0.004 a call | `GET /v1/youtube/channels/search` |
-| [YouTube channel videos](https://okdata.online/apis/youtube/channels/videos/list/) | A channel's videos or its Shorts, newest first, about 30 a page, by channel ID or handle: title, views, cover and, for videos, length and roughly when it was published (YouTube says "3 weeks ago"). A channel ID nobody has reads like a channel without such videos: an empty page. | $0.002 a call | `GET /v1/youtube/channels/videos/list` |
+| [YouTube video search](https://okdata.online/apis/youtube/videos/search/?src=gh-youtube-api) | Videos matching keywords with views, length and channel. | $0.004 a call | `GET /v1/youtube/videos/search` |
+| [YouTube video detail](https://okdata.online/apis/youtube/videos/get/?src=gh-youtube-api) | One video by ID or link: title, description, views, likes and channel. | $0.002 a call | `GET /v1/youtube/videos/get` |
+| [YouTube video comments](https://okdata.online/apis/youtube/videos/comments/list/?src=gh-youtube-api) | Comments on a video, top or newest first. | $0.002 a call | `GET /v1/youtube/videos/comments/list` |
+| [YouTube video transcript](https://okdata.online/apis/youtube/videos/transcript/get/?src=gh-youtube-api) | The transcript of a video with timestamps, in the original or a chosen language. | $0.004 a call | `GET /v1/youtube/videos/transcript/get` |
+| [YouTube comment replies](https://okdata.online/apis/youtube/comments/replies/list/?src=gh-youtube-api) | The replies under a comment, by the comment's replies token, about 10 at a time: text, replier (handle, avatar, verification), likes, and roughly when it was posted (YouTube says "6 years ago"). post_id and parent_id are read from the token. | $0.002 a call | `GET /v1/youtube/comments/replies/list` |
+| [YouTube channel posts](https://okdata.online/apis/youtube/channels/posts/list/?src=gh-youtube-api) | The posts on a channel's Posts tab (once Community), newest first, about 10 a page, by channel ID or handle: text, pictures, likes, the video a post shares (ext.video_id, its cover in images), and roughly when it was posted (YouTube says "4 days ago"). A channel ID nobody has reads like a channel without posts: an empty page. | $0.002 a call | `GET /v1/youtube/channels/posts/list` |
+| [YouTube post detail](https://okdata.online/apis/youtube/posts/get/?src=gh-youtube-api) | One channel post (once a Community post) by ID or link: text, channel, pictures, likes, the video it shares (ext.video_id, its cover in images), and roughly when it was posted. | $0.002 a call | `GET /v1/youtube/posts/get` |
+| [YouTube channel profile](https://okdata.online/apis/youtube/channels/get/?src=gh-youtube-api) | A channel by ID or handle: name, description, avatar, verification, subscribers and video count (rounded as YouTube shows them), and under ext its total views, the day it joined, the links in its About section, country and banner. The handle comes back when you ask by handle. | $0.002 a call | `GET /v1/youtube/channels/get` |
+| [YouTube channel search](https://okdata.online/apis/youtube/channels/search/?src=gh-youtube-api) | Find channels by keywords, 20 a page in YouTube's order: channel ID, name, the start of the description, avatar and subscribers (rounded as YouTube shows them). No handle or badge here; youtube.channels.get gives the badge. | $0.004 a call | `GET /v1/youtube/channels/search` |
+| [YouTube channel videos](https://okdata.online/apis/youtube/channels/videos/list/?src=gh-youtube-api) | A channel's videos or its Shorts, newest first, about 30 a page, by channel ID or handle: title, views, cover and, for videos, length and roughly when it was published (YouTube says "3 weeks ago"). A channel ID nobody has reads like a channel without such videos: an empty page. | $0.002 a call | `GET /v1/youtube/channels/videos/list` |
 
 ## Quick start
 
@@ -66,13 +66,13 @@ Then ask in plain words, for example "YouTube video search: claude code tutorial
 
 **Do I need a YouTube account?** No. The data is public content, fetched on the server; your own account is never involved.
 
-**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. New accounts get $0.10 to try; after that, top-ups start at $10 and never expire, with no subscription. Pricing: https://okdata.online/pricing/ · Billing details: https://okdata.online/docs/billing/
+**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. New accounts get $0.10 to try; after that, top-ups start at $10 and never expire, with no subscription. Pricing: https://okdata.online/pricing/?src=gh-youtube-api · Billing details: https://okdata.online/docs/billing/?src=gh-youtube-api
 
 **Why not the YouTube Data API?** It runs on a daily quota (a search uses 100 of the default 10,000 units) and does not return captions for videos you do not own. Here a search is one call at a fixed price, and transcripts work for any public video that has captions.
 
 **Can I page through results?** Each page of a list is one call: pass `page.next_cursor` back as `cursor` for the next one. A cursor stays valid for 24 hours.
 
-**What happens when a call fails?** Every error has a fixed `code`, a `message`, and says whether you were charged (`charged`) and whether to retry (`retry`). All error codes: https://okdata.online/docs/errors/
+**What happens when a call fails?** Every error has a fixed `code`, a `message`, and says whether you were charged (`charged`) and whether to retry (`retry`). All error codes: https://okdata.online/docs/errors/?src=gh-youtube-api
 
 ## 中文说明
 
