@@ -4,7 +4,7 @@
 
 Examples for the [okdata](https://okdata.online/?src=gh-youtube-api) YouTube API: 10 live endpoints behind one API key, pay per call from $0.002. No YouTube login, no cookies and no browser, so there is no account to get blocked.
 
-[Sign up free (free trial: up to 333 calls)](https://okdata.online/signup/?src=gh-youtube-api) · [All YouTube endpoints](https://okdata.online/apis/youtube/?src=gh-youtube-api) · [Use it from Claude, Cursor or any MCP client](https://okdata.online/mcp/?src=gh-youtube-api)
+[Sign up free ($0.10 of trial credit)](https://okdata.online/signup/?src=gh-youtube-api) · [All YouTube endpoints](https://okdata.online/apis/youtube/?src=gh-youtube-api) · [Use it from Claude, Cursor or any MCP client](https://okdata.online/mcp/?src=gh-youtube-api)
 
 ## Endpoints
 
@@ -66,7 +66,7 @@ Then ask in plain words, for example "YouTube video search: claude code tutorial
 
 **Do I need a YouTube account?** No. The data is public content, fetched on the server; your own account is never involved.
 
-**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. New accounts get a free trial of up to 333 calls; after that, top-ups start at $10 and never expire, with no subscription. Pricing: https://okdata.online/pricing/?src=gh-youtube-api · Billing details: https://okdata.online/docs/billing/?src=gh-youtube-api
+**How is it billed?** Each endpoint has its own price, listed above for one call; endpoints billed per item count what comes back. New accounts get $0.10 to try; after that, top-ups start at $10 and never expire, with no subscription. Pricing: https://okdata.online/pricing/?src=gh-youtube-api · Billing details: https://okdata.online/docs/billing/?src=gh-youtube-api
 
 **Why not the YouTube Data API?** It runs on a daily quota (a search uses 100 of the default 10,000 units) and does not return captions for videos you do not own. Here a search is one call at a fixed price, and transcripts work for any public video that has captions.
 
